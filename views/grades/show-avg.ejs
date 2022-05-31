@@ -1,0 +1,33 @@
+
+
+
+<table class="table table-success mt-3 mx-auto table-sm align-middle table-bordered table-hover" style="width: 90%;">
+  <thead class="table-dark">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Class</th>
+      <th>Subject</th>
+      <th>Average</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+    <tbody>
+      <% if (data.length) { %> 
+        <% data.forEach(grade => { %>
+          <tr>
+          <td><%=grade.f_name%></td> 
+          <td><%=grade.l_name%></td> 
+          <td><%=grade.class%></td> 
+          <td><%=grade.subject%></td> 
+          <td><%=grade.avg%></td> 
+          <td><a href="/grades" class="btn">Back</a></td> 
+        </tr>
+        <% }) %>
+      <% } else { %> 
+        <tr>
+          <td colspan="7">No Grades Entries</td>
+        </tr>
+      <% } %> 
+    </tbody>
+  </table>

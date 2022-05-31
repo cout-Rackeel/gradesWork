@@ -2,12 +2,12 @@
 <div>
   <form action="/grades" method="post">
     <select  aria-label="Default select example" name="subject">
-      <option selected value="">-- CHOOSE SUBJECT --</option>
-      <option value="Mathematics">Mathematics</option>
-      <option value="Physics">Physics</option>
-      <option value="Chemistry">Chemistry</option>
-      <option value="Computer Science">Computer Science</option>
-      <option value="English A">English A</option>
+      <!-- <option selected value="0">-- CHOOSE SUBJECT --</option> -->
+      <option selected value="1">Mathematics</option>
+      <option value="2">Physics</option>
+      <option value="3">Chemistry</option>
+      <option value="4">Computer Science</option>
+      <option value="5">English A</option>
     </select>
     <button type="submit">search</button>
   </form>
@@ -23,6 +23,7 @@
       <th>Term</th>
       <th>Grade</th>
       <th>Letter Grade</th>
+      <th>Action</th>
     </tr>
   </thead>
     <tbody>
@@ -36,6 +37,7 @@
           <td><%=grade.term%></td> 
           <td><%=grade.grade%></td> 
           <td><%=grade.letter%></td> 
+          <td> <a href="/grades/show-avg/<%= grade.stu_id %>/<%= grade.sub_id %>"class="btn"> show average </a></td>
         </tr>
         <% }) %>
       <% } else { %> 
