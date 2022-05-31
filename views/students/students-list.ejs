@@ -1,0 +1,64 @@
+
+
+
+<table class="table table-success mt-3 mx-auto table-sm align-middle table-bordered table-hover" style="width: 90%;">
+<thead class="table-dark">
+  <tr>
+    <th>ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Class</th>
+    <th style="text-align: right;">Action</th>
+  </tr>
+</thead>
+  <tbody>
+    <% if (students.length) { %> 
+      <% students.forEach(student => { %>
+        <tr>
+        <td><%=student.id%></td> 
+        <td><%=student.f_name%></td> 
+        <td><%=student.l_name%></td> 
+        <td><%=student.class%></td> 
+        <td style="text-align: right;"><a href="/students/add-grade/<%=student.id%>" class="btn" >Add Grades</a></td> 
+      </tr>
+      <% }) %>
+    <% } else { %> 
+      <tr>
+        <td colspan="5">No Student Entries</td>
+      </tr>
+    <% } %> 
+  </tbody>
+</table>
+
+<div class="modal fade modal " id="addStudentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addStudentModalLabel" aria-hidden="true">
+  <form method="post" action="/students/add" class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content" >
+      <div class="modal-header">
+        <h5 class="modal-title" id="addStudentModalLabel">Student Form</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="fname" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="fname" placeholder="John" name="fname">
+        </div>
+
+        <div class="mb-3">
+          <label for="lname" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="lname" placeholder="Doe" name="lname">
+        </div>
+
+        <div class="mb-3">
+          <label for="class" class="form-label">Class</label>
+          <input type="text" class="form-control" id="class" placeholder="2T" name="class">
+        </div>
+
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>

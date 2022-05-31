@@ -1,0 +1,47 @@
+
+<div>
+  <form action="/grades" method="post">
+    <select  aria-label="Default select example" name="subject">
+      <option selected value="">-- CHOOSE SUBJECT --</option>
+      <option value="Mathematics">Mathematics</option>
+      <option value="Physics">Physics</option>
+      <option value="Chemistry">Chemistry</option>
+      <option value="Computer Science">Computer Science</option>
+      <option value="English A">English A</option>
+    </select>
+    <button type="submit">search</button>
+  </form>
+</div>
+
+<table class="table table-success mt-3 mx-auto table-sm align-middle table-bordered table-hover" style="width: 90%;">
+  <thead class="table-dark">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Class</th>
+      <th>Subject</th>
+      <th>Term</th>
+      <th>Grade</th>
+      <th>Letter Grade</th>
+    </tr>
+  </thead>
+    <tbody>
+      <% if (grades.length) { %> 
+        <% grades.forEach(grade => { %>
+          <tr>
+          <td><%=grade.f_name%></td> 
+          <td><%=grade.l_name%></td> 
+          <td><%=grade.class%></td> 
+          <td><%=grade.subject%></td> 
+          <td><%=grade.term%></td> 
+          <td><%=grade.grade%></td> 
+          <td><%=grade.letter%></td> 
+        </tr>
+        <% }) %>
+      <% } else { %> 
+        <tr>
+          <td colspan="7">No Grades Entries</td>
+        </tr>
+      <% } %> 
+    </tbody>
+  </table>

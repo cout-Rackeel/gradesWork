@@ -1,0 +1,45 @@
+  <div class=" pb-3 pt-3 px-3 border mt-5 mx-auto" style="width: 800px;">
+    <form method="post" action="/students/addGrade">
+        <div>
+          <h1 class="mb-3 mt-3 h4">Grades Form</h1>
+        </div>
+
+          <div class="mb-4">
+            <select class="form-select" aria-label="Default select example" name="subject">
+              <option selected>-- CHOOSE SUBJECT --</option>
+              <option value="1">Mathematics</option>
+              <option value="2">Physics</option>
+              <option value="3">Chemistry</option>
+              <option value="4">Computer Science</option>
+              <option value="5">English A</option>
+            </select>
+
+          </div><div class="mb-4">
+            <select class="form-select" aria-label="Default select example" name="term">
+              <option selected>-- CHOOSE TERM --</option>
+              <option value="1">TERM 1</option>
+              <option value="2">TERM 2</option>
+              <option value="3">TERM 3</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label for="grade" class="form-label">Grade</label>
+            <input type="number" class="form-control" id="grade" placeholder="90%" min="0" name="grade">
+          </div>
+
+          <input type="hidden" class="form-control" id="student" name="student" value="<%= studentID %>">
+  
+          <div>
+            <button type="submit" class="btn btn-success">Submit</button>
+          </div>
+        
+    </form>
+  </div>
+  
+
+  
+
+
+
+
